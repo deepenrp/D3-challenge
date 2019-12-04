@@ -72,7 +72,8 @@ d3.csv("assets/data/data.csv").then(function(censusData) {
       .attr("cy", d => yLinearScale(d.healthcare))
       .attr("cx", d => xLinearScale(d.poverty))
       .attr("r", "10")
-      .attr("class", "stateCircle");
+      .attr("class", "stateCircle")
+      .attr("stroke", "black");
 
 
   // Initialize tool tip
@@ -110,13 +111,34 @@ d3.csv("assets/data/data.csv").then(function(censusData) {
       .attr("y", 0 - margin.left + 40)
       .attr("x", 0 - (chartHeight / 2))
       .attr("dy", "1em")
-      .attr("class", "aText")
+      .attr("class", "axisText")
       .text("Lacks Healthcare (%)");
 
     chartGroup.append("text")
       .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + margin.top + 30})`)
-      .attr("class", "aText")
+      .attr("class", "axisText")
       .text("Poverty (%)");
+
+    // State Abbreviation in the Cirles
+    chartGroup.append("text")
+      .attr("class", "stateText")
+      .style("font-size", "10px")
+      .style("font-weight", "bold")
+      .selectAll("tspan")
+      .data(censusData)
+      .enter()
+      .append("tspan")
+      .attr("x", function(data) {
+          return xLinearScale(data.poverty);
+      })
+      .attr("y", function(data) {
+          return yLinearScale(data.healthcare -0.2);
+      })
+      .text(function(data) {
+          return data.abbr
+      });
+
+
 
 
   // ================================================================
