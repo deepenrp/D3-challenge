@@ -72,6 +72,7 @@ d3.csv("assets/data/data.csv").then(function(censusData) {
       .attr("cy", d => yLinearScale(d.healthcare))
       .attr("cx", d => xLinearScale(d.poverty))
       .attr("r", "10")
+      .attr("opacity", "0.75")
       .attr("class", "stateCircle")
       .attr("stroke", "black");
 
