@@ -1,6 +1,6 @@
 // svg container
-var svgHeight = 500;
-var svgWidth = 700;
+var svgHeight = 600;
+var svgWidth = 800;
 
 // margins
 var margin = {
