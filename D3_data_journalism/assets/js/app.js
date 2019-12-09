@@ -138,42 +138,6 @@ d3.csv("assets/data/data.csv").then(function(censusData) {
       .text(function(data) {
           return data.abbr
       });
-
-
-
-
-  // ================================================================
-
-
-
-//   var obesity = data.map(data => data.obesity);
-//   console.log("obesity", obesity);
-
-//   var smokes = data.map(data => data.smokes);
-//   console.log("smokes", smokes);
-
-//   var healthcare = data.map(data => data.healthcare);
-//   console.log("healthcare", healthcare);
-
-//   var poverty = data.map(data => data.poverty);
-//   console.log("poverty", poverty);
-
-//   var age = data.map(data => data.age);
-//   console.log("age", age);
-
-//   var income = data.map(data => data.income);
-//   console.log("income", income);
-
-//   // Data Arrays and Categories
-//   var dataArray = [obesity, smokes, healthcare, poverty, age, income];
-//   console.log(dataArray)
-//   var dataCategories = ["obesity", "smokes", "healthcare", "poverty", "age", "income"];
-//   console.log(dataCategories)
-
-// // ---------------------------------------------------
-
-
-
     
 }).catch(function(error) {
   console.log(error);
